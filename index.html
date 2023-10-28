@@ -9,32 +9,32 @@
 </head>
 <body>
     <div class="book-container">
+        <div class="add-book">
+            <form id="add-book" novalidate>
+                <ul>
+                    <li>
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" required>
+                    </li>
+                    <li>
+                        <label for="author">Author</label>
+                        <input type="text" id="author" name="author" required>
+                    </li>
+                    <li>
+                        <label for="year">Year</label>
+                        <input type="tel" id="year" name="year" pattern="[0-9]{4}">
+                    </li>
+                    <li>
+                        <label for="read">Read?</label>
+                        <input type="checkbox" id="read" name="read">
+                    </li>
+                    <li>
+                        <button type="button">Add</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
     </div>
-
-    <form id="add-book" novalidate>
-        <ul>
-            <li>
-                <label for="title">Title</label>
-                <input type="text" id="title" name="title" required>
-            </li>
-            <li>
-                <label for="author">Author</label>
-                <input type="text" id="author" name="author" required>
-            </li>
-            <li>
-                <label for="year">Year</label>
-                <input type="tel" id="year" name="year" pattern="[0-9]{4}">
-            </li>
-            <li>
-                <label for="read">Read?</label>
-                <input type="checkbox" id="read" name="read">
-            </li>
-            <li>
-                <button type="button">Add</button>
-            </li>
-        </ul>
-    </form>
-    
 
     <template id="book-template">
         <div class="book">
@@ -48,6 +48,10 @@
             <span id="read" class="value"></span>
             <img class="minus-icon icon" src="./icons/minus-circle-outline.svg" alt="Minus icon">
         </div>
+    </template>
+
+    <template id="add-book-form">
+        
     </template>
 </body>
 </html>
