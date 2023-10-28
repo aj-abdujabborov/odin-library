@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <script src="./script.js" defer></script>
-    <title>Document</title>
+    <title>Odin Library</title>
 </head>
 <body>
+    <div class="book-container">
+    </div>
+
     <form id="add-book" novalidate>
         <ul>
             <li>
@@ -32,5 +35,18 @@
         </ul>
     </form>
     
+
+    <template id="book-template">
+        <div class="book">
+            <span id="title" class="prop">Title</span>
+            <span id="title" class="value"></span>
+            <span id="author" class="prop">Author</span>
+            <span id="author" class="value"></span>
+            <span id="year" class="prop">Year</span>
+            <span id="year" class="value"></span>
+            <span id="read" class="prop">Read?</span>
+            <span id="read" class="value"></span>
+        </div>
+    </template>
 </body>
 </html>

@@ -9,6 +9,9 @@ const form = {
     button: document.querySelector("form#add-book button"),
 };
 
+const bookContainer = document.querySelector("div.book-container");
+const bookTemplate = document.querySelector("template#book-template");
+
 form.button.addEventListener("click", () => {
     addBookToLibrary(form.title.value,
                     form.author.value,
@@ -30,6 +33,19 @@ function Book(title, author, year, bRead) {
     this.author = author ? author : "Unknown";
     this.year = year ? Number(year) : "Unknown";
     this.read = bRead ? true : false;
+
+    // render
+    const clone = bookTemplate.content.cloneNode(true);
+    const titleValue = clone.querySelector("span#title.value");
+    const authorValue = clone.querySelector("span#author.value");
+    const yearValue = clone.querySelector("span#year.value");
+    const readValue = clone.querySelector("span#read.value");
+
+    titleValue.textContent = this.title;
+    authorValue.textContent = this.author;
+    yearValue.textContent = this.year;
+    readValue.textContent = this.read;
+    bookContainer.appendChild(clone);
 }
 
 function addBookToLibrary(title, author, year, bRead) {
