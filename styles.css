@@ -66,6 +66,16 @@ div.book div.book-info > * {
 }
 div.book span#read.value {
   justify-self: start;
+  padding: 5px 10px;
+  border: 1px solid var(--text-color);
+  border-radius: var(--border-radius);
+  transition-duration: 0.2s;
+}
+div.book span#read.value:hover {
+  background-color: var(--text-color);
+  color: var(--book-color);
+  transition-duration: 0.2s;
+  cursor: pointer;
 }
 div.book img.minus-icon {
   justify-self: end;

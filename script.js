@@ -44,6 +44,11 @@ function Book(title, author, year, bRead) {
         const ind = myLibrary.indexOf(this);
         myLibrary.splice(ind, 1);
     });
+    const readStatus = bookInstance.querySelector("span#read.value");
+    readStatus.addEventListener("click", () => {
+        this.read = !this.read;
+        readStatus.textContent = this.read ? "Read ✔" : "Not read ✘";
+    })
 
     function setInternalValues() {
         this.title = title ? title : "Unknown";
@@ -56,7 +61,7 @@ function Book(title, author, year, bRead) {
         clone.querySelector("span#title.value").textContent = this.title;
         clone.querySelector("span#author.value").textContent = this.author;
         clone.querySelector("span#year.value").textContent = this.year;
-        clone.querySelector("span#read.value").textContent = this.read ? "Read ✔" : "Not Read"
+        clone.querySelector("span#read.value").textContent = this.read ? "Read ✔" : "Not read ✘"
     }
 
     function insertCloneIntoDOM(clone) {
