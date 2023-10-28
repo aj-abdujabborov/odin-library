@@ -17,5 +17,14 @@ div.book-container {
   column-gap: 3ch;
   background-color: rgb(216, 215, 116);
 }
+.book img.minus-icon {
+  grid-column: 1/-1;
+  justify-self: end;
+}
+
+.icon {
+  height: 1.5em;
+  width: 1.5em;
+}
 
 /*# sourceMappingURL=styles.css.map */

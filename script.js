@@ -1,4 +1,5 @@
 const myLibrary = [];
+let bookNum = 0;
 
 const form = {
     form: document.querySelector("form#add-book"),
@@ -17,6 +18,7 @@ form.button.addEventListener("click", () => {
                     form.author.value,
                     form.year.value,
                     form.read.checked);
+    form.form.reset();
 })
 
 addBookToLibrary("Philosopher's Stone", "J. K. Rowling", 1997, false);
@@ -40,12 +42,22 @@ function Book(title, author, year, bRead) {
     const authorValue = clone.querySelector("span#author.value");
     const yearValue = clone.querySelector("span#year.value");
     const readValue = clone.querySelector("span#read.value");
+    const removeButton = clone.querySelector("img.minus-icon");
 
     titleValue.textContent = this.title;
     authorValue.textContent = this.author;
     yearValue.textContent = this.year;
     readValue.textContent = this.read;
     bookContainer.appendChild(clone);
+    const thisBook = bookContainer.lastElementChild;
+
+    // removal
+    removeButton.addEventListener("click", () => {
+        thisBook.remove();
+        
+        const ind = myLibrary.indexOf(this);
+        myLibrary.splice(ind, 1);
+    });
 }
 
 function addBookToLibrary(title, author, year, bRead) {
