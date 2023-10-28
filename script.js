@@ -19,8 +19,8 @@ form.button.addEventListener("click", () => {
     form.form.reset();
 })
 
-addBookToLibrary("Philosopher's Stone", "J. K. Rowling", 1997, false);
-addBookToLibrary("Chamber of Secrets", "J. K. Rowling", 1998, false);
+addBookToLibrary("Philosopher's Stone", "J. K. Rowling", 1997, true);
+addBookToLibrary("Chamber of Secrets", "J. K. Rowling", 1998, true);
 addBookToLibrary("Prisoner of Azkaban", "J. K. Rowling", 1999, false);
 addBookToLibrary("Goblet of Fire", "J. K. Rowling", 2000, false);
 
@@ -56,7 +56,7 @@ function Book(title, author, year, bRead) {
         clone.querySelector("span#title.value").textContent = this.title;
         clone.querySelector("span#author.value").textContent = this.author;
         clone.querySelector("span#year.value").textContent = this.year;
-        clone.querySelector("span#read.value").textContent = this.read;
+        clone.querySelector("span#read.value").textContent = this.read ? "Read ✔" : "Not Read"
     }
 
     function insertCloneIntoDOM(clone) {

@@ -1,30 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;1,100;1,300&display=swap");
+:root {
+  --book-color: #451a03;
+  --book-shadow: #451a036c;
+  --text-color: #fffbeb;
+  --icon-size: 1.8em;
+  --border-radius: 5px;
+  font-family: "Lato", sans-serif, system-ui;
+}
+
 body {
-  background-color: azure;
+  background-color: #fffbeb;
+  padding: calc(8px + 2vw);
+}
+
+.icon {
+  height: var(--icon-size);
+  width: var(--icon-size);
 }
 
 div.book-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-template-rows: min-content;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 }
 
-.book {
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  row-gap: 10px;
-  column-gap: 3ch;
-  background-color: rgb(216, 215, 116);
-}
-.book img.minus-icon {
-  grid-column: 1/-1;
-  justify-self: end;
+div.book, div.add-book {
+  aspect-ratio: 2/3;
+  background-color: var(--book-color);
+  color: var(--text-color);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: 4px 4px 20px var(--book-shadow);
 }
 
-.icon {
-  height: 1.5em;
-  width: 1.5em;
+div.book {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 5px;
+  justify-items: center;
+  align-items: center;
+}
+div.book div.book-info {
+  grid-column: 1/-1;
+}
+div.book div.book-info span#title.value {
+  font-size: 2em;
+  font-weight: 700;
+}
+div.book div.book-info span#author.value {
+  font-size: 1.5em;
+}
+div.book div.book-info span#year.value {
+  font-size: 1em;
+}
+div.book div.book-info > * {
+  display: block;
+  margin: 5px 0;
+  text-align: center;
+}
+div.book span#read.value {
+  justify-self: start;
+}
+div.book img.minus-icon {
+  justify-self: end;
+  transition-duration: 0.2s;
+}
+div.book img.minus-icon:hover {
+  transform: scale(1.1);
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+div.book img.minus-icon:active {
+  transform: scale(0.5);
+  transition-duration: 0.2s;
+}
+
+div.add-book {
+  background-color: #fbbf24;
+  color: var(--book-color);
+  font-weight: 700;
+}
+div.add-book ul, div.add-book li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+div.add-book label, div.add-book input, div.add-book button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-weight: inherit;
+}
+div.add-book label {
+  font-size: 0.7em;
+  text-transform: uppercase;
+}
+div.add-book input {
+  margin: 0.2em 0;
+  border: 1px solid var(--book-color);
+  height: 25px;
+  font-size: 1.2em;
+  background: none;
+}
+div.add-book input:focus {
+  outline: none;
+  border-color: var(--text-color);
+}
+div.add-book input[type=checkbox] {
+  width: auto;
+  height: auto;
+}
+div.add-book button {
+  border: none;
+  background-color: var(--book-color);
+  color: var(--text-color);
+  height: 30px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: var(--border-radius);
+  transition: 0.2s;
+}
+div.add-book button:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
 }
 
 /*# sourceMappingURL=styles.css.map */

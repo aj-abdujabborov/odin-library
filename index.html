@@ -10,7 +10,8 @@
 <body>
     <div class="book-container">
         <div class="add-book">
-            <form id="add-book" novalidate>
+            <form id="add-book">
+                <h2>Add book</h2>
                 <ul>
                     <li>
                         <label for="title">Title</label>
@@ -38,20 +39,14 @@
 
     <template id="book-template">
         <div class="book">
-            <span id="title" class="prop">Title</span>
-            <span id="title" class="value"></span>
-            <span id="author" class="prop">Author</span>
-            <span id="author" class="value"></span>
-            <span id="year" class="prop">Year</span>
-            <span id="year" class="value"></span>
-            <span id="read" class="prop">Read?</span>
+            <div class="book-info">
+                <span id="title" class="value"></span>
+                <span id="author" class="value"></span>
+                <span id="year" class="value"></span>
+            </div>
             <span id="read" class="value"></span>
             <img class="minus-icon icon" src="./icons/minus-circle-outline.svg" alt="Minus icon">
         </div>
-    </template>
-
-    <template id="add-book-form">
-        
     </template>
 </body>
 </html>
