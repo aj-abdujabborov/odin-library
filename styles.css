@@ -40,6 +40,11 @@ div.book {
   row-gap: 5px;
   justify-items: center;
   align-items: center;
+  transition-duration: 0.2s;
+}
+div.book:hover {
+  transform: translateY(-5px);
+  transition-duration: 0.2s;
 }
 div.book div.book-info {
   grid-column: 1/-1;
