@@ -43,7 +43,7 @@ div.book {
   transition-duration: 0.2s;
 }
 div.book:hover {
-  transform: translateY(-5px);
+  transform: scale(1.005) rotate(-0.5deg);
   transition-duration: 0.2s;
 }
 div.book div.book-info {

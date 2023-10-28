@@ -45,7 +45,7 @@ div.book {
     transition-duration: 0.2s;
 
     &:hover {
-        transform: translateY(-5px);
+        transform: scale(1.005) rotate(-0.5deg);;
         transition-duration: 0.2s;
     }
 
